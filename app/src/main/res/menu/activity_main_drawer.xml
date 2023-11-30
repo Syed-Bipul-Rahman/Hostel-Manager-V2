@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/img"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_baseline_article_24"
+            android:title="Notice" />
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_meal"
+            android:icon="@drawable/ic_baseline_local_dining_24"
+            android:title="Meal" />
+        <item
+            android:id="@+id/nav_students"
+            android:icon="@drawable/ic_baseline_people_alt_24"
+            android:title="Students" />
+        <item
+            android:id="@+id/nav_galler_original"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Gallery" />
+        <item
+            android:id="@+id/nav_hostelsupar"
+            android:icon="@drawable/ic_baseline_admin_panel_settings_24"
+            android:title="Hostel Supar" />
+        <item
+            android:id="@+id/nav_abouthostel"
+            android:title="About Hostel" />
+        <item
+            android:id="@+id/nav_aboutapp"
+            android:icon="@drawable/ic_baseline_info_24"
+            android:title="About App" />
+    </group>
+</menu>
