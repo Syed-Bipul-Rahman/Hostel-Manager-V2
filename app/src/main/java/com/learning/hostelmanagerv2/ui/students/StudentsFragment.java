@@ -5,11 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.learning.hostelmanagerv2.adapter.StudentAdapter;
 import com.learning.hostelmanagerv2.databinding.FragmentStudentsBinding;
@@ -50,8 +52,24 @@ public class StudentsFragment extends Fragment {
                 binding.progressBar.setVisibility(View.GONE);
                 adapter = new StudentAdapter(getContext(), students);
                 binding.studentsRecycler.setAdapter(adapter);
+
                 binding.studentsRecycler.setVisibility(View.VISIBLE);
 
+                adapter.notifyDataSetChanged();
+
+                binding.studentsRecycler.addOnScrollListener(new RecyclerView.OnScrollListener() {
+                    @Override
+                    public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                        super.onScrollStateChanged(recyclerView, newState);
+                        if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                            // The RecyclerView is not scrolling
+                            adapter.disableAnimationOnScroll();
+                        } else {
+                            // The RecyclerView is scrolling
+                            adapter.enableAnimationOnScroll();
+                        }
+                    }
+                });
 
                 binding.searchveiw.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                     @Override

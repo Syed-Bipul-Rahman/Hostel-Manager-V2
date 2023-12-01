@@ -2,7 +2,10 @@ package com.learning.hostelmanagerv2.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,6 +19,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
 
     private Context context;
     private List<Students> results;
+    private boolean animateOnScroll = false;
 
     public StudentAdapter(Context context, List<Students> results) {
         this.context = context;
@@ -48,6 +52,11 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         holder.studenRecyclerLayoutBinding.studentname.setText(studentName);
         holder.studenRecyclerLayoutBinding.rommno.setText(studentphonenumbr);
         holder.studenRecyclerLayoutBinding.session.setText(studentSession);
+
+        if (animateOnScroll) {
+            setAnimation(holder.itemView, position);
+        }
+
 //        holder.studenRecyclerLayoutBinding.studentshortdesc.setOnClickListener(v -> {
 //
 //            //starts details info activity
@@ -88,12 +97,26 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         }
     }
 
+    public void setAnimation(View viewToAnimate, int position) {
+        Animation slide_in = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left);
+        viewToAnimate.startAnimation(slide_in);
+
+
+    }
 
     public void filterlist(List<Students> filterlist) {
 
         results = filterlist;
         notifyDataSetChanged();
 
+    }
+
+    public void enableAnimationOnScroll() {
+        animateOnScroll = true;
+    }
+
+    public void disableAnimationOnScroll() {
+        animateOnScroll = false;
     }
 
 }
