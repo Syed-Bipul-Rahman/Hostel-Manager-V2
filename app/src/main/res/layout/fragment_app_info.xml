@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/walpaper"
+    android:orientation="vertical"
+    tools:context=".ui.about.AppInfoFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/aboutapp_bg"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" মৌলভীবাজার পলিটেকনিক ইনস্টিটিউট সবুজ ছায়া ঘেরা বৃক্ষরাজীতে পরিবেষ্ঠিত এবং ইনস্টিটিউটের একাডেমিক কাম প্রশাসনিক ভবনের সামনে আলোক সজ্জায় সজ্জিত ফোয়ারা সম্বলিত মনোমুগ্ধকর ফুলের বাগান অবস্থিত। ৬ একর জমির উপর নির্মিত এ প্রতিষ্ঠানটিতে সুরম্য ৫তলা ভবন সমূহের একাডেমিক কাম প্রশাসনিক ভবন, ছাত্রাবাস ইত্যাদির সন্নিবেশ ঘটেছে। "
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Developer"
+            android:textColor="@color/purple_400"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="100dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/developer" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="সৈয়দ বিপুল রহমান"
+            android:textColor="@color/purple_200"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Mobile App Developer"
+            android:textColor="@color/purple_200" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="&amp;"
+            android:textColor="@color/purple_200" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Co-Founder of"
+            android:textColor="@color/purple_200" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Sohoz-learning.online"
+            android:textColor="@color/purple_200" />
+    </LinearLayout>
+
+
+</LinearLayout>

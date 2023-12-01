@@ -79,8 +79,9 @@ public class HomeFragment extends Fragment {
         ArrayList<SlideModel> imageList = new ArrayList<>();
 
 
-        imageList.add(new SlideModel(R.drawable.logo, ScaleTypes.CENTER_CROP));
-        imageList.add(new SlideModel(R.drawable.niceimage, ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.hostel, ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.hostelimage, ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.hostelsite, ScaleTypes.CENTER_CROP));
 
 
         imageSlider.setImageList(imageList);
