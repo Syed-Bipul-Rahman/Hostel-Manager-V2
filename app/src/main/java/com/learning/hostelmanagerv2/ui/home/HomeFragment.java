@@ -16,9 +16,11 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.learning.hostelmanagerv2.R;
+import com.learning.hostelmanagerv2.adapter.HostelSuperHomeAdapter;
 import com.learning.hostelmanagerv2.adapter.NoticeAdapter;
 import com.learning.hostelmanagerv2.databinding.FragmentHomeBinding;
 import com.learning.hostelmanagerv2.services.model.Notice;
+import com.learning.hostelmanagerv2.ui.admin.AdminFragmentViewModel;
 import com.learning.hostelmanagerv2.ui.notice.NoticeViewModel;
 
 import java.util.ArrayList;
@@ -85,6 +87,17 @@ public class HomeFragment extends Fragment {
 
 
         imageSlider.setImageList(imageList);
+
+        //set horizontal recycler view for hostel supar
+
+        binding.personRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        AdminFragmentViewModel adminFragmentViewModel = new ViewModelProvider(this).get(AdminFragmentViewModel.class);
+
+        adminFragmentViewModel.getAllAdmin().observe(getViewLifecycleOwner(), admins -> {
+            binding.personRecycler.setAdapter(new HostelSuperHomeAdapter(getContext(), admins));
+            binding.personRecycler.setVisibility(View.VISIBLE);
+            binding.progressbarPersonHome.setVisibility(View.GONE);
+        });
 
 
         return root;

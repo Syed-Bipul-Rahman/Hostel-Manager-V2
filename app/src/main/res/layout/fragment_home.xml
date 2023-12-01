@@ -208,21 +208,19 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/person_recycler"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                tools:listitem="@layout/person_home_layout" />
-
             <ProgressBar
                 android:id="@+id/progressbar_person_home"
                 android:layout_width="wrap_content"
-                android:layout_marginTop="5dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="50dp"
-                />
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="50dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/person_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
 
         </LinearLayout>
     </ScrollView>

@@ -16,13 +16,9 @@ public class SingleAdmin {
     @SerializedName("position")
     @Expose
     private String position;
-
-    public SingleAdmin(String id, String hallSuparName, String hallSuparPhone, String position) {
-        this.id = id;
-        this.hallSuparName = hallSuparName;
-        this.hallSuparPhone = hallSuparPhone;
-        this.position = position;
-    }
+    @SerializedName("image")
+    @Expose
+    private String image;
 
     public String getId() {
         return id;
@@ -54,5 +50,13 @@ public class SingleAdmin {
 
     public void setPosition(String position) {
         this.position = position;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
