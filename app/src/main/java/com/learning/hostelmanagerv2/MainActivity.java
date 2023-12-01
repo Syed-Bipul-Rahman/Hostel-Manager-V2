@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
                 R.id.nav_meal, R.id.nav_students, R.id.nav_galler_original,
-                R.id.nav_hostelsupar,  R.id.nav_aboutapp)
+                R.id.nav_hostelsupar, R.id.nav_aboutapp)
                 .setOpenableLayout(drawer)
                 .build();
 
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //loading fragment after click on bottom navigation
-        binding.bottomNavigationView.setOnNavigationItemSelectedListener(item->{
+        binding.bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.bottom_nav_home:
                     navController.navigate(R.id.nav_home);
@@ -62,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
                     return false;
             }
         });
+
+
 
     }
 

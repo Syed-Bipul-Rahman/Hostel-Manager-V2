@@ -28,7 +28,7 @@ public class NoticeFragment extends Fragment {
 
         binding.noticeListRecyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
 
-
+//show get notice list from viewmodel
         noticeViewModel.getAllNotice().observe(getViewLifecycleOwner(), notices -> {
 
             noticeAdapter = new NoticeAdapter(getContext(), notices);

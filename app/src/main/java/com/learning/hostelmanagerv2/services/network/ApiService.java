@@ -1,6 +1,7 @@
 package com.learning.hostelmanagerv2.services.network;
 
 import com.learning.hostelmanagerv2.services.model.AllNotice;
+import com.learning.hostelmanagerv2.services.model.AllStudents;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -8,8 +9,8 @@ import retrofit2.http.GET;
 public interface ApiService {
 
     //student list
-//    @GET("verifed-students.php")
-//    Call<AllStudents> getAllStudentsLists();
+    @GET("verifed-students.php")
+    Call<AllStudents> getAllStudentsLists();
 
     //all notice
     @GET("notice.php")
