@@ -12,16 +12,18 @@
         android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/person_image"
             android:layout_width="match_parent"
             android:layout_height="130dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/niceimage" />
+            android:src="@drawable/avater" />
 
         <TextView
             android:id="@+id/nameofperson"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:padding="4dp"
             android:text="Sabbir Hossain"
             android:textColor="@color/black"
             android:textSize="19sp" />
@@ -31,6 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:padding="4dp"
             android:text="Title"
             android:textSize="19sp" />
 
@@ -39,7 +42,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:padding="4dp"
             android:text="017xxxxx"
+
             android:textSize="19sp" />
     </LinearLayout>
 

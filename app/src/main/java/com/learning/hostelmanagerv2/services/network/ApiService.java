@@ -1,5 +1,6 @@
 package com.learning.hostelmanagerv2.services.network;
 
+import com.learning.hostelmanagerv2.services.model.AllAdmin;
 import com.learning.hostelmanagerv2.services.model.AllNotice;
 import com.learning.hostelmanagerv2.services.model.AllStudents;
 
@@ -17,8 +18,8 @@ public interface ApiService {
     Call<AllNotice> getAllNotice();
 
     //all admin
-//    @GET("hall-admin.php")
-//    Call<AllAdmin> getAllAdmin();
+    @GET("hall-admin.php")
+    Call<AllAdmin> getAllAdmin();
 
     //    get result
 //    @GET("individualResult?roll=476734&regulation=2016")
