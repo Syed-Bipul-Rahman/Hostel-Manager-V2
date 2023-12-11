@@ -106,12 +106,17 @@ public class StudentsFragment extends Fragment implements StudentAdapter.OnItemC
     public void onItemClick(Students student) {
         ///pass data to student details fragment and load it
 
-        StudentDetailsFragment fragment = new StudentDetailsFragment();
+
         Bundle bundle = new Bundle();
 
         bundle.putString("name", student.getName());
         bundle.putString("phone", student.getPhone());
         bundle.putString("roll", student.getRoll());
+        bundle.putString("district", student.getDist());
+        bundle.putString("room", student.getRoomNo());
+        bundle.putString("hostelid", student.getStudentId());
+        bundle.putString("registration", student.getRegistration());
+        bundle.putString("session", student.getSession());
 
         getParentFragmentManager().setFragmentResult("senddata", bundle);
 
@@ -120,7 +125,6 @@ public class StudentsFragment extends Fragment implements StudentAdapter.OnItemC
         navController.navigate(R.id.nav_student_details);
 
 
-        Toast.makeText(getContext(), "" + student.getName().toString(), Toast.LENGTH_LONG).show();
     }
 
     @Override

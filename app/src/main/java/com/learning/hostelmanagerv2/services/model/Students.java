@@ -37,8 +37,23 @@ public class Students {
     @SerializedName("session")
     @Expose
     private String session;
+    @SerializedName("room_no")
+    @Expose
+    private String roomNo;
+    @SerializedName("student_id")
+    @Expose
+    private String studentId;
+    @SerializedName("is_admin")
+    @Expose
+    private String isAdmin;
+    @SerializedName("password")
+    @Expose
+    private String password;
+    @SerializedName("is_verified")
+    @Expose
+    private String isVerified;
 
-    public Students(String uid, String name, String roll, String registration, String phone, String father, String fatherphone, String mother, String dist, String upzila, String session) {
+    public Students(String uid, String name, String roll, String registration, String phone, String father, String fatherphone, String mother, String dist, String upzila, String session, String roomNo, String studentId, String isAdmin, String password, String isVerified) {
         this.uid = uid;
         this.name = name;
         this.roll = roll;
@@ -50,6 +65,11 @@ public class Students {
         this.dist = dist;
         this.upzila = upzila;
         this.session = session;
+        this.roomNo = roomNo;
+        this.studentId = studentId;
+        this.isAdmin = isAdmin;
+        this.password = password;
+        this.isVerified = isVerified;
     }
 
     public String getUid() {
@@ -138,5 +158,45 @@ public class Students {
 
     public void setSession(String session) {
         this.session = session;
+    }
+
+    public String getRoomNo() {
+        return roomNo;
+    }
+
+    public void setRoomNo(String roomNo) {
+        this.roomNo = roomNo;
+    }
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
+
+    public String getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(String isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getIsVerified() {
+        return isVerified;
+    }
+
+    public void setIsVerified(String isVerified) {
+        this.isVerified = isVerified;
     }
 }
