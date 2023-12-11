@@ -17,15 +17,23 @@ import java.util.List;
 
 public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentViewHolder> {
 
+
+    //for click
+    public interface OnItemClickListener {
+        void onItemClick(Students student);
+    }
+
+
     private Context context;
     private List<Students> results;
     private boolean animateOnScroll = false;
+    private OnItemClickListener listener;
 
-    public StudentAdapter(Context context, List<Students> results) {
+    public StudentAdapter(Context context, List<Students> results, OnItemClickListener listener) {
         this.context = context;
         this.results = results;
+        this.listener = listener;
     }
-
 
     @NonNull
     @Override
@@ -56,27 +64,13 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         if (animateOnScroll) {
             setAnimation(holder.itemView, position);
         }
+//click listener
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onItemClick(results.get(position));
+            }
+        });
 
-//        holder.studenRecyclerLayoutBinding.studentshortdesc.setOnClickListener(v -> {
-//
-//            //starts details info activity
-//            Intent intent = new Intent(context, StudentDetails.class);
-//            intent.putExtra("name", studentName);
-//            intent.putExtra("studentphonenumbr", studentphonenumbr);
-//            intent.putExtra("studentmother", studentmother);
-//            intent.putExtra("studentfather", studentfather);
-//            intent.putExtra("studentfatgerphonenumbr", studentfatgerphonenumbr);
-//            intent.putExtra("studentDistrict", studentDistrict);
-//            intent.putExtra("studentUpazila", studentUpazila);
-//            intent.putExtra("studentRoll", studentRoll);
-//            intent.putExtra("studentRegistration", studentRegistration);
-//            intent.putExtra("studentSession", studentSession);
-//
-//
-//            context.startActivity(intent);
-//
-//
-//        });
 
     }
 
@@ -118,5 +112,4 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
     public void disableAnimationOnScroll() {
         animateOnScroll = false;
     }
-
 }
