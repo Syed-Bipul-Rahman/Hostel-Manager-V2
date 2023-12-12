@@ -13,12 +13,21 @@ import com.learning.hostelmanagerv2.services.model.Notice;
 import java.util.List;
 
 public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeViewholder> {
+
+    //for click
+    public interface OnItemClickListener {
+        void onItemClick(Notice notice);
+    }
+
+
     private Context context;
     private List<Notice> noticeList;
+    private OnItemClickListener listener;
 
-    public NoticeAdapter(Context context, List<Notice> noticeList) {
+    public NoticeAdapter(Context context, List<Notice> noticeList, OnItemClickListener listener) {
         this.context = context;
         this.noticeList = noticeList;
+        this.listener = listener;
     }
 
     @NonNull
@@ -32,22 +41,19 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.NoticeView
     @Override
     public void onBindViewHolder(@NonNull NoticeViewholder holder, int position) {
 
-        //   holder.noticeLayoutBinding.noticeTitle.setText(noticeList.get(position).getNoticetitle());
 
-        //get first 30 charecter
+        //get first 50 charecter
         String showtoDesc = noticeList.get(position).getDescrip().substring(0, Math.min(noticeList.get(position).getDescrip().length(), 50));
 
         holder.noticeLayoutBinding.noticetext.setText(showtoDesc + "...");
 
 
-//        holder.noticeLayoutBinding.noticeContainer.setOnClickListener(v -> {
-//            Intent intent = new Intent(context, NoticeDetails.class);
-//            intent.putExtra("title", noticeList.get(position).getNoticetitle());
-//            intent.putExtra("desc", noticeList.get(position).getDescrip());
-//
-//            context.startActivity(intent);
-//        });
-
+        //click listener
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onItemClick(noticeList.get(position));
+            }
+        });
 
     }
 

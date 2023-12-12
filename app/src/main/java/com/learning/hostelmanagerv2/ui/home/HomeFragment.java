@@ -26,7 +26,7 @@ import com.learning.hostelmanagerv2.ui.notice.NoticeViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements NoticeAdapter.OnItemClickListener {
 
     private FragmentHomeBinding binding;
     NoticeAdapter noticeAdapter;
@@ -51,13 +51,13 @@ public class HomeFragment extends Fragment {
                 List<Notice> firstThreeNotices = notices.subList(0, Math.min(notices.size(), 3));
 
 
-                noticeAdapter = new NoticeAdapter(getContext(), firstThreeNotices);
+                noticeAdapter = new NoticeAdapter(getContext(), firstThreeNotices, HomeFragment.this);
                 binding.noticeRecycler.setAdapter(noticeAdapter);
                 binding.noticeRecycler.setVisibility(View.VISIBLE);
                 binding.progresbarNoticesHome.setVisibility(View.GONE);
 
             } else {
-                noticeAdapter = new NoticeAdapter(getContext(), notices);
+                noticeAdapter = new NoticeAdapter(getContext(), notices, HomeFragment.this);
                 binding.noticeRecycler.setAdapter(noticeAdapter);
                 binding.noticeRecycler.setVisibility(View.VISIBLE);
                 binding.progresbarNoticesHome.setVisibility(View.GONE);
@@ -107,5 +107,19 @@ public class HomeFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    @Override
+    public void onItemClick(Notice notice) {
+
+
+        Bundle bundle = new Bundle();
+
+        bundle.putString("noticedetails", notice.getDescrip());
+
+        getParentFragmentManager().setFragmentResult("sendNotice", bundle);
+
+        NavController navController = Navigation.findNavController(requireView());
+        navController.navigate(R.id.nav_notice_details);
     }
 }

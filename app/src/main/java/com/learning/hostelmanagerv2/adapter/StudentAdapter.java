@@ -54,12 +54,12 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentV
         String studentUpazila = results.get(position).getUpzila();
         String studentRoll = results.get(position).getRoll();
         String studentRegistration = results.get(position).getRegistration();
-        String studentSession = results.get(position).getSession();
+        String studentRoomNo = results.get(position).getRoomNo();
 
 
         holder.studenRecyclerLayoutBinding.studentname.setText(studentName);
         holder.studenRecyclerLayoutBinding.rommno.setText(studentphonenumbr);
-        holder.studenRecyclerLayoutBinding.session.setText(studentSession);
+        holder.studenRecyclerLayoutBinding.session.setText(studentRoomNo);
 
         if (animateOnScroll) {
             setAnimation(holder.itemView, position);

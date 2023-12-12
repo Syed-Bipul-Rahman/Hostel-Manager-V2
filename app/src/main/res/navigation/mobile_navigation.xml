@@ -43,5 +43,10 @@
         android:name="com.learning.hostelmanagerv2.ui.students.StudentDetailsFragment"
         android:label="StudentDetails"
         tools:layout="@layout/fragment_student_details" />
+    <fragment
+        android:id="@+id/nav_notice_details"
+        android:name="com.learning.hostelmanagerv2.ui.notice.NoticeDetailsFragment"
+        android:label="NoticeDetails"
+        tools:layout="@layout/fragment_notice_details" />
 
 </navigation>
