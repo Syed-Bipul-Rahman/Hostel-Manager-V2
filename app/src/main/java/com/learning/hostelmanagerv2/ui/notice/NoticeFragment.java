@@ -62,7 +62,6 @@ public class NoticeFragment extends Fragment implements NoticeAdapter.OnItemClic
         bundle.putString("noticedetails", notice.getDescrip());
 
         getParentFragmentManager().setFragmentResult("sendNotice", bundle);
-
         NavController navController = Navigation.findNavController(requireView());
         navController.navigate(R.id.nav_notice_details);
     }

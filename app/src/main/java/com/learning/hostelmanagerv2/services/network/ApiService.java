@@ -1,6 +1,7 @@
 package com.learning.hostelmanagerv2.services.network;
 
 import com.learning.hostelmanagerv2.services.model.AllAdmin;
+import com.learning.hostelmanagerv2.services.model.AllGallery;
 import com.learning.hostelmanagerv2.services.model.AllNotice;
 import com.learning.hostelmanagerv2.services.model.AllStudents;
 
@@ -20,6 +21,11 @@ public interface ApiService {
     //all admin
     @GET("hall-admin.php")
     Call<AllAdmin> getAllAdmin();
+
+    //gallery image url
+    @GET("all-gallery.php")
+    Call<AllGallery> getAllGallery();
+
 
     //    get result
 //    @GET("individualResult?roll=476734&regulation=2016")
