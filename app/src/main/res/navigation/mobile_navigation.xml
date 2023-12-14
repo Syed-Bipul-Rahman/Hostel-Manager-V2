@@ -41,17 +41,22 @@
     <fragment
         android:id="@+id/nav_student_details"
         android:name="com.learning.hostelmanagerv2.ui.students.StudentDetailsFragment"
-        android:label="StudentDetails"
+        android:label="Student Details"
         tools:layout="@layout/fragment_student_details" />
     <fragment
         android:id="@+id/nav_notice_details"
         android:name="com.learning.hostelmanagerv2.ui.notice.NoticeDetailsFragment"
-        android:label="NoticeDetails"
+        android:label="Notice Details"
         tools:layout="@layout/fragment_notice_details" />
     <fragment
         android:id="@+id/nav_galler_original"
         android:name="com.learning.hostelmanagerv2.ui.gallery.GalleryFragment"
-        android:label="AllGallery"
+        android:label="All Gallery"
         tools:layout="@layout/fragment_gallery" />
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="com.learning.hostelmanagerv2.ui.login.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" />
 
 </navigation>
