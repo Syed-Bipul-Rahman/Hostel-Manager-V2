@@ -63,8 +63,8 @@ public class ProfileFragment extends Fragment {
                     // Set the title and messages
                     builder.setTitle("Warning")
                             .setIcon(R.drawable.ic_baseline_warning_amber_24)
-                            .setMessage("Please provide the correct information for registration. This will help the administrator to review your information. Until then, your data won't appear on the student list.")
-                            .setCancelable(true)
+                            .setMessage("Your account is not verified yet. Please contact admin to verify your account.")
+                            .setCancelable(false)
                             .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     // Do something if the user clicks OK
