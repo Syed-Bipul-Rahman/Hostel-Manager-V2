@@ -4,9 +4,14 @@ import com.learning.hostelmanagerv2.services.model.AllAdmin;
 import com.learning.hostelmanagerv2.services.model.AllGallery;
 import com.learning.hostelmanagerv2.services.model.AllNotice;
 import com.learning.hostelmanagerv2.services.model.AllStudents;
+import com.learning.hostelmanagerv2.services.model.LoginModel;
+import com.learning.hostelmanagerv2.services.model.MealList;
 
 import retrofit2.Call;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 
 public interface ApiService {
 
@@ -35,20 +40,22 @@ public interface ApiService {
     //dynamic url main
     //  @GET()
 //    Call<AllResult> getAllResult(@Url String url);
-//
-//    @GET("meal-coast.php")
-//    Call<MealList> getMealList();
+
+//meal list
+    @GET("meal-coast.php")
+    Call<MealList> getMealList();
 
 
 //    //test
 //    @GET()
 //    Call<ApiResponse> getAllResult(@Url String url);
 
-//
-//    @FormUrlEncoded
-//    @POST("login.php")
-//    Call<LoginModel> getLogin(@Field("phone") String phone,
-//                              @Field("password") String password);
+    //login
+    @FormUrlEncoded
+    @POST("login.php")
+    Call<LoginModel> getLogin(@Field("phone") String phone,
+                              @Field("password") String password);
+
 
 //    @FormUrlEncoded
 //    @POST("register.php")

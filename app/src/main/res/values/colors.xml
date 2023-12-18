@@ -13,4 +13,13 @@
     <color name="gray">#9D9DA4</color>
     <color name="tomato_red">#F51212</color>
     <color name="purple_400">#883AF6</color>
+    <color name="resultTextColor">#1F47FB</color>
+    <color name="result_textnext">#007CB3</color>
+    <color name="skyblue">#579090</color>
+    <color name="tangerine">#9AFF9A05</color>
+    <color name="orange">#FF5722</color>
+    <color name="themecolor">#03A003</color>
+    <color name="greendark">#037303</color>
+    <color name="greenVerylight">#A1C4FEC4</color>
+    <color name="red">#FF0303</color>
 </resources>

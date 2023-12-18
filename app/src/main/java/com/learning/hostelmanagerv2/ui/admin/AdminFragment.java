@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.learning.hostelmanagerv2.adapter.HostelSuparAdapter;
 import com.learning.hostelmanagerv2.databinding.FragmentAdminBinding;
@@ -34,7 +33,7 @@ public class AdminFragment extends Fragment {
 
         //get admin from viewmodel
 
-        binding.recyclerAdmin.setLayoutManager(new GridLayoutManager(getContext(),2));
+        binding.recyclerAdmin.setLayoutManager(new GridLayoutManager(getContext(), 2));
 
         viewModel = new ViewModelProvider(this).get(AdminFragmentViewModel.class);
         viewModel.getAllAdmin().observe(this, singleAdmins -> {
