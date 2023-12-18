@@ -45,8 +45,6 @@ public class StudentsFragment extends Fragment implements StudentAdapter.OnItemC
         View root = binding.getRoot();
 
 
-
-
         //prevent user to see studnet info if they are not logged in
         SharedPreferences sharedPreferences = getContext().getSharedPreferences("login_pref", MODE_PRIVATE);
         authToken = sharedPreferences.getString("USER_AUTH_TOCKEN", "");

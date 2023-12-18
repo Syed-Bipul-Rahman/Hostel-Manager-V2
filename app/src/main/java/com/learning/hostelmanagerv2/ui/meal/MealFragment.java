@@ -107,4 +107,10 @@ public class MealFragment extends Fragment {
 
         dialog.show();
     }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
 }

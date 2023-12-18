@@ -85,7 +85,14 @@ public class ProfileFragment extends Fragment {
 
         //  showPopupDialog();
 
-
+        binding.studentLogout.setOnClickListener(v -> {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.clear();
+            editor.apply();
+            NavController navController = Navigation.findNavController(requireView());
+            navController.navigate(R.id.nav_home);
+            Toast.makeText(getContext(), "User Logout", Toast.LENGTH_SHORT).show();
+        });
         return root;
     }
 
