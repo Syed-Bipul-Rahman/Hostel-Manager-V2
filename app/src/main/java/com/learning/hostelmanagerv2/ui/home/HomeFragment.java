@@ -74,6 +74,20 @@ public class HomeFragment extends Fragment implements NoticeAdapter.OnItemClickL
 
 
         });
+        //navigate to gallery
+        binding.seeAllGallery.setOnClickListener(v -> {
+            NavController navController = Navigation.findNavController(v);
+            navController.navigate(R.id.nav_galler_original);
+
+
+        });
+        //navigate to all admin
+        binding.seeAllAdmin.setOnClickListener(v -> {
+            NavController navController = Navigation.findNavController(v);
+            navController.navigate(R.id.nav_hostelsupar);
+
+
+        });
 
         //slider
         ImageSlider imageSlider = binding.imgSlid;
