@@ -45,6 +45,14 @@ public class LoginFragment extends Fragment {
 
         View view = binding.getRoot();
 
+        //navigate to register fragment after click on create account
+        binding.createAccount.setOnClickListener(v -> {
+            NavController navController = Navigation.findNavController(requireView());
+            navController.navigate(R.id.nav_register);
+
+        });
+
+
         //viewmodel
         loginViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
 

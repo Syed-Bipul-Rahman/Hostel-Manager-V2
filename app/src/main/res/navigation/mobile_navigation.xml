@@ -63,5 +63,10 @@
         android:name="com.learning.hostelmanagerv2.ui.meal.MealFragment"
         android:label="Meal"
         tools:layout="@layout/fragment_meal" />
+    <fragment
+        android:id="@+id/nav_register"
+        android:name="com.learning.hostelmanagerv2.ui.register.RegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_register" />
 
 </navigation>

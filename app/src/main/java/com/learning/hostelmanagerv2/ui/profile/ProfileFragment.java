@@ -29,10 +29,8 @@ public class ProfileFragment extends Fragment {
     String userName, userPhone, isAdmin, isVerified, authToken, roll;
     Integer userId;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        ProfileViewModel profileViewModel =
-                new ViewModelProvider(this).get(ProfileViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        ProfileViewModel profileViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
 
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -61,16 +59,12 @@ public class ProfileFragment extends Fragment {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
 
                     // Set the title and messages
-                    builder.setTitle("Warning")
-                            .setIcon(R.drawable.ic_baseline_warning_amber_24)
-                            .setMessage("Your account is not verified yet. Please contact admin to verify your account.")
-                            .setCancelable(false)
-                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int id) {
-                                    // Do something if the user clicks OK
-                                    dialog.dismiss();
-                                }
-                            });
+                    builder.setTitle("Warning").setIcon(R.drawable.ic_baseline_warning_amber_24).setMessage("Your account is not verified yet. Please contact admin to verify your account.").setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // Do something if the user clicks OK
+                            dialog.dismiss();
+                        }
+                    });
 
                     AlertDialog alert = builder.create();
                     alert.show();
